@@ -119,12 +119,11 @@ content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
   grid-gap: 0 1.5em;
-  padding: 1em 0 0;
 }
 
 .card .article-body p {
-  margin: 0;
-  line-height: 1.75;
+  margin: 0.75em 0 0;
+  line-height: 1.5;
 }
 /* ---- */
 

@@ -1,0 +1,271 @@
+@font-face {
+  font-family: "regular";
+  src: url("assets/fonts/regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "medium";
+  src: url("assets/fonts/medium.ttf") format("truetype");
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", sans-serif;
+  color: #222222;
+  margin: 0;
+}
+
+header, footer {
+  text-align: center;
+  background: #F6F6F6;
+  padding: 2em;
+  transition: background-color 0.3s ease;
+}
+
+header p, footer p {
+  font-family: "regular";
+  line-height: 2;
+  margin: 0;
+}
+
+header .lead {
+  font-family: "medium";
+  font-size: 1.1rem;
+}
+
+header .la-map-marker, header .la-sun {
+  cursor: pointer;
+  font-size: 1.5em;
+  transition: 0.2s ease;
+  transition-property: transform, color;
+}
+
+header .la-map-marker:hover {
+  color: #FF6F08;
+  transform: scale(1.2);
+}
+
+header .la-sun:hover {
+  color: #FF6F08;
+  transform: rotate(45deg);
+}
+
+content {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 2em 1.5em;
+  justify-items: center;
+  background-color: #E0E0E0;
+  transition: background-color 0.3s ease;
+}
+
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1.5em;
+  max-width: 50em;
+  width: 100%;
+}
+
+.anchor-custom a {
+  position: relative;
+  text-decoration: none;
+  color: #currentColor;
+}
+
+.anchor-custom a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0.1em;
+  bottom: 0;
+  left: 0;
+  background-color: #FF6F08;
+  visibility: hidden;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.3s ease;
+  transition-property: transform, visibility;
+}
+
+.anchor-custom a:hover:before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+/* CARD */
+.card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+  grid-gap: 1.5em;
+  padding: 2em;
+  background-color: #F6F6F6;
+  border-radius: 15px;
+  box-shadow: 0 3px 6px #C0C0C0;
+  transition: background-color 0.3s ease;
+  transition: box-shadow 0.3s ease;
+}
+
+.card .article-header {
+  font-family: "medium";
+  font-size: 1.3rem;
+}
+
+.card .article-body {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+  grid-gap: 0 1.5em;
+  padding: 1em 0 0;
+}
+
+.card .article-body p {
+  margin: 0;
+  line-height: 1.75;
+}
+/* ---- */
+
+/* CARD-GALLERY */
+.card-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+  grid-gap: 1.5em;
+  align-items: center;
+}
+
+.card-gallery-item {
+  background-color: #F6F6F6;
+  border-radius: 15px;
+  box-shadow: 0 3px 6px #C0C0C0;
+  transition: background-color 0.3s ease;
+  transition: box-shadow 0.3s ease;
+}
+
+.card-gallery img {
+  width: 100%;
+  border-radius: 15px 15px 0 0;
+}
+
+.card-gallery p {
+  font-family: "regular";
+  font-size: 1rem;
+  letter-spacing: 0.025rem;
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+}
+/* ------------ */
+
+.nav-container {
+  background-color: #222222;
+  color: #F8F8F8;
+  width: 100%;
+  grid-template-columns: 1fr;
+}
+
+.nav-container label {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 50em;
+}
+
+.nav-container label a, .nav-container label i {
+  font-size: 1.5em;
+  padding: 0.5em 1em;
+}
+
+.nav-container label a {
+  color: #FF6F08;
+}
+
+.nav-content-wrapper {
+  margin: 0 auto;
+  max-width: 50em;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+}
+
+.nav-content-about, .nav-content-contact {
+  margin-bottom: 2em;
+  padding: 0 2em;
+}
+
+.nav-content-about {
+  grid-column: span 2;
+}
+
+.nav-content-about p {
+  line-height: 1.5;
+}
+
+.nav-content-contact .lab {
+  margin: 0.5em 0;
+  font-size: 2.2em;
+}
+
+input[type='checkbox'] {
+  display: none;
+}
+
+.nav-toggle i {
+  cursor: pointer;
+  transform: rotate(0deg);
+  transition: transform 0.25s ease;
+}
+
+input:checked + .nav-toggle i {
+  transform: rotate(-180deg);
+}
+
+input:checked + .nav-toggle + .nav-content-wrapper {
+  max-height: 80vh;
+  transition: max-height 0.25s ease;
+}
+
+.dark {
+  color: #FAFAFA;
+  transition: color 0.5s ease;
+}
+
+.dark header, .dark footer {
+  background-color: #333333;
+  transition: background-color 0.3s ease;
+}
+
+.dark header .la-map-marker, .dark header .la-sun {
+  color: #FF6F08;
+  transition: transform 0.2s ease;
+}
+
+.dark content {
+  background-color: #222222;
+  transition: background-color 0.3s ease;
+}
+
+.dark .card, .dark .card-gallery-item {
+  background-color: #3C3C3C;
+  box-shadow: none;
+  transition: background-color 0.3s ease;
+}
+
+.dark .card i {
+  color: #FF6F08;
+  transition: color 0.5s ease;
+}
+
+svg {
+  fill: #222222;
+  vertical-align: sub;
+}
+
+.dark svg {
+  fill: #FF6F08;
+  transition: fill 0.5s ease;
+}

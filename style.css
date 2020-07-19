@@ -37,22 +37,35 @@ header .lead {
   font-size: 1.1rem;
 }
 
-header .la-map-marker, header .la-sun {
+/* ICONS */
+header .icon-map {
   cursor: pointer;
-  font-size: 1.5em;
+  fill: none;
+  stroke-linejoin: round;
+  stroke-width: 2rem;
+  stroke: #222222;
   transition: 0.2s ease;
-  transition-property: transform, color;
+  transition-property: stroke, transform;
 }
 
-header .la-map-marker:hover {
-  color: #FF6F08;
+header .icon-map:hover {
+  stroke: #FF6F08;
   transform: scale(1.2);
 }
 
-header .la-sun:hover {
-  color: #FF6F08;
-  transform: rotate(45deg);
+header .icon-moon {
+  cursor: pointer;
+  fill: none;
+  stroke-linejoin: round;
+  stroke-width: 2rem;
+  stroke: #222222;
+  transition: stroke 0.2s ease;
 }
+
+header .icon-moon:hover {
+  stroke: #FF6F08;
+}
+/* ----- */
 
 main {
   display: grid;
@@ -228,6 +241,7 @@ input:checked + .nav-toggle + .nav-content-wrapper {
   transition: max-height 0.25s ease;
 }
 
+/* DARK */
 .dark {
   color: #FAFAFA;
   transition: color 0.5s ease;
@@ -238,12 +252,14 @@ input:checked + .nav-toggle + .nav-content-wrapper {
   transition: background-color 0.3s ease;
 }
 
-.dark header .la-map-marker, .dark header .la-sun {
-  color: #FF6F08;
-  transition: transform 0.2s ease;
+.dark header .icon-map, .dark header .icon-moon {
+  fill: none;
+  stroke: #FF6F08;
+  transition: stroke 0.2s ease;
+  transition-property: stroke, transform;
 }
 
-.dark content {
+.dark main {
   background-color: #222222;
   transition: background-color 0.3s ease;
 }
@@ -268,3 +284,4 @@ svg {
   fill: #FF6F08;
   transition: fill 0.5s ease;
 }
+/* ---- */

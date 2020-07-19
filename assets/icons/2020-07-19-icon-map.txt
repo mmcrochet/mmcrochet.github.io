@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<style>.a{fill:none;stroke-linejoin:round;stroke-width:30px;stroke:#000;}</style>
+<path d="M256 48c-79.5 0-144 61.4-144 137 0 87 96 224.9 131.3 272.5a15.8 15.8 0 0 0 25.5 0C304 409.9 400 272.1 400 185 400 109.4 335.5 48 256 48Z" class="a"/><circle cx="256" cy="192" r="48" class="a"/>
+</svg>

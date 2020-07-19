@@ -37,48 +37,6 @@ header .lead {
   font-size: 1.1rem;
 }
 
-/* ICONS */
-.nav-content-contact .icon-instagram {
-  fill: #FF6F08;
-}
-
-header .icon-map {
-  cursor: pointer;
-  fill: none;
-  stroke-linejoin: round;
-  stroke-width: 2rem;
-  stroke: #222222;
-  transition: 0.2s ease;
-  transition-property: stroke, transform;
-}
-
-header .icon-map:hover {
-  stroke: #FF6F08;
-  transform: scale(1.2);
-}
-
-header .icon-moon {
-  cursor: pointer;
-  fill: none;
-  stroke-linejoin: round;
-  stroke-width: 2rem;
-  stroke: #222222;
-  transition: stroke 0.2s ease;
-}
-
-header .icon-moon:hover {
-  stroke: #FF6F08;
-}
-
-.icon-check {
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 3rem;
-  stroke: #222222;
-}
-/* ----- */
-
 main {
   display: grid;
   grid-template-columns: 1fr;
@@ -95,6 +53,58 @@ main {
   max-width: 50em;
   width: 100%;
 }
+
+/* ICONS */
+svg {
+  vertical-align: sub;
+}
+
+.icon-chevron {
+  cursor: pointer;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3rem;
+  stroke: #F8F8F8;
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+.nav-content-contact .icon-instagram {
+  fill: #FF6F08;
+}
+
+.icon-map, .icon-moon {
+  cursor: pointer;
+  fill: none;
+  stroke-linejoin: round;
+  stroke-width: 2rem;
+  stroke: #222222;
+  transition: stroke 0.2s ease, transform 0.2s ease;
+}
+
+.icon-map:hover {
+  stroke: #FF6F08;
+  transform: scale(1.2);
+}
+
+.icon-moon:hover {
+  stroke: #FF6F08;
+}
+
+.icon-check {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3rem;
+  stroke: #222222;
+}
+
+.icon-yarn, .icon-hook, .icon-bunny {
+  fill: #222222;
+  stroke: #222222;
+}
+/* ----- */
 
 .anchor-custom a {
   position: relative;
@@ -131,8 +141,7 @@ main {
   background-color: #F6F6F6;
   border-radius: 15px;
   box-shadow: 0 3px 6px #C0C0C0;
-  transition: background-color 0.3s ease;
-  transition: box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card .article-header {
@@ -164,8 +173,7 @@ main {
   background-color: #F6F6F6;
   border-radius: 15px;
   box-shadow: 0 3px 6px #C0C0C0;
-  transition: background-color 0.3s ease;
-  transition: box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card-gallery img {
@@ -226,17 +234,6 @@ input[type='checkbox'] {
   display: none;
 }
 
-.nav-toggle .icon-chevron {
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 3rem;
-  stroke: #F8F8F8;
-  cursor: pointer;
-  transform: rotate(0deg);
-  transition: transform 0.25s ease;
-}
-
 input:checked + .nav-toggle .icon-chevron {
   transform: rotate(-180deg);
 }
@@ -258,11 +255,15 @@ input:checked + .nav-toggle + .nav-content-wrapper {
   transition: background-color 0.3s ease;
 }
 
-.dark header .icon-map, .dark header .icon-moon {
-  fill: none;
+.dark .icon-yarn, .dark .icon-hook, .dark .icon-bunny {
+  fill: #FF6F08;
   stroke: #FF6F08;
-  transition: stroke 0.2s ease;
-  transition-property: stroke, transform;
+  transition: fill 0.5s ease, stroke 0.5s ease;
+}
+
+.dark .icon-map, .dark .icon-moon, .dark .icon-check {
+  stroke: #FF6F08;
+  transition: stroke 0.5s ease, transform 0.2s ease;
 }
 
 .dark main {
@@ -274,20 +275,5 @@ input:checked + .nav-toggle + .nav-content-wrapper {
   background-color: #3C3C3C;
   box-shadow: none;
   transition: background-color 0.3s ease;
-}
-
-.dark .card i {
-  color: #FF6F08;
-  transition: color 0.5s ease;
-}
-
-svg {
-  fill: #222222;
-  vertical-align: sub;
-}
-
-.dark svg {
-  fill: #FF6F08;
-  transition: fill 0.5s ease;
 }
 /* ---- */

@@ -38,6 +38,10 @@ header .lead {
 }
 
 /* ICONS */
+.nav-content-contact .icon-instagram {
+  fill: #FF6F08;
+}
+
 header .icon-map {
   cursor: pointer;
   fill: none;
@@ -64,6 +68,14 @@ header .icon-moon {
 
 header .icon-moon:hover {
   stroke: #FF6F08;
+}
+
+.icon-check {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3rem;
+  stroke: #222222;
 }
 /* ----- */
 
@@ -171,37 +183,30 @@ main {
 }
 /* ------------ */
 
+/* NAVBAR */
 .nav-container {
   background-color: #222222;
   color: #F8F8F8;
   width: 100%;
-  grid-template-columns: 1fr;
 }
 
 .nav-container label {
   display: flex;
   justify-content: space-between;
+  font-size: 1.5rem;
   margin: 0 auto;
-  max-width: 50em;
-}
-
-.nav-container label a, .nav-container label i {
-  font-size: 1.5em;
-  padding: 0.5em 1em;
-}
-
-.nav-container label a {
-  color: #FF6F08;
+  padding: 0.6rem 1rem;
+  max-width: 50rem;
 }
 
 .nav-content-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
   margin: 0 auto;
-  max-width: 50em;
+  max-width: 50rem;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.25s ease;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
 }
 
 .nav-content-about, .nav-content-contact {
@@ -217,29 +222,30 @@ main {
   line-height: 1.5;
 }
 
-.nav-content-contact .lab {
-  margin: 0.5em 0;
-  font-size: 2.2em;
-}
-
 input[type='checkbox'] {
   display: none;
 }
 
-.nav-toggle i {
+.nav-toggle .icon-chevron {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3rem;
+  stroke: #F8F8F8;
   cursor: pointer;
   transform: rotate(0deg);
   transition: transform 0.25s ease;
 }
 
-input:checked + .nav-toggle i {
+input:checked + .nav-toggle .icon-chevron {
   transform: rotate(-180deg);
 }
 
 input:checked + .nav-toggle + .nav-content-wrapper {
-  max-height: 80vh;
-  transition: max-height 0.25s ease;
+  max-height: 100vh;
+  transition: max-height 0.3s ease;
 }
+/* ------ */
 
 /* DARK */
 .dark {

@@ -271,7 +271,7 @@ input:checked + .nav-toggle + .nav-content-wrapper {
   transition: background-color 0.3s ease;
 }
 
-.dark .card-gallery-item {
+.dark .gallery-item {
   background-color: #3C3C3C;
   box-shadow: none;
   transition: background-color 0.3s ease;

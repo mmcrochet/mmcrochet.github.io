@@ -23,6 +23,10 @@ body {
   font-family: var(--font-stack);
   color: var(--color-text);
   margin: 0;
+  text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
 }
 
 /* HEADER-FOOTER */
@@ -32,26 +36,21 @@ header, footer {
   text-align: center;
   transition: background-color 0.3s ease;
 }
-
 .header-brand {
   font: normal 2rem/1.3 "brand-regular", var(--font-stack);
   margin: 1rem 0;
 }
-
 .header-subbrand {
   font: normal 1.6rem/1.3 "brand-regular", var(--font-stack);
   margin: 1rem 0;
 }
-
 header p, footer p {
   font: 1rem/2 var(--font-stack);
   margin: 0;
 }
-
 header .lead {
   font: 1.1rem/2 var(--font-stack);
 }
-
 header p:last-child {
   margin-bottom: 1rem;
 }
@@ -63,7 +62,6 @@ main {
   padding: 2rem;
   transition: background-color 0.3s ease;
 }
-
 .main-wrapper {
   display: grid;
   grid-template-columns: 1fr;
@@ -76,18 +74,16 @@ main {
 svg {
   vertical-align: sub;
 }
-
 .icon-chevron {
   cursor: pointer;
   fill: none;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 3rem;
-  stroke: #F8F8F8;
+  stroke: var(--color-bg-secondary);
   transform: rotate(0deg);
   transition: transform 0.3s ease;
 }
-
 .icon-map, .icon-moon {
   cursor: pointer;
   fill: none;
@@ -96,16 +92,13 @@ svg {
   stroke: var(--color-text);
   transition: stroke 0.2s ease, transform 0.2s ease;
 }
-
 .icon-map:hover {
   stroke: var(--color-brand);
   transform: scale(1.2);
 }
-
 .icon-moon:hover {
   stroke: var(--color-brand);
 }
-
 .icon-check {
   fill: none;
   stroke-linecap: round;
@@ -113,7 +106,6 @@ svg {
   stroke-width: 3rem;
   stroke: var(--color-text);
 }
-
 .icon-yarn, .icon-hook, .icon-bunny {
   fill: var(--color-text);
   stroke: var(--color-text);
@@ -124,7 +116,7 @@ svg {
   content: "";
   position: absolute;
   width: 100%;
-  height: 0.1em;
+  height: 0.1rem;
   bottom: 0;
   left: 0;
   background-color: var(--color-brand);
@@ -133,7 +125,6 @@ svg {
   transform-origin: left;
   transition: transform 0.3s ease, visibility 0.3s ease;
 }
-
 .anchor-custom a:hover:before {
   visibility: visible;
   transform: scaleX(1);
@@ -145,18 +136,15 @@ svg {
   grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
   grid-gap: 1.5rem;
 }
-
 .article-header {
   font: 1.5rem "brand-regular", var(--font-stack);
   border-bottom: 0.1rem solid #808080;
 }
-
 .article-body {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
-  grid-gap: 0 1.5em;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  grid-gap: 0 1.5rem;
 }
-
 .article-body p {
   line-height: 1.5;
   margin: 0.75rem 0 0;
@@ -169,26 +157,22 @@ svg {
   border-bottom: 0.1rem solid #808080;
   margin-bottom: 1rem;
 }
-
 .gallery-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
-  grid-gap: 1.5em;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  grid-gap: 1.5rem;
   align-items: center;
 }
-
 .gallery-item {
   background-color: var(--color-bg-secondary);
   border-radius: 15px;
   box-shadow: 0 3px 6px #C0C0C0;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
-
 .gallery-item img {
   width: 100%;
   border-radius: 15px 15px 0 0;
 }
-
 .gallery-item p {
   font-family: "brand-regular", var(--font-stack);
   letter-spacing: 0.025rem;

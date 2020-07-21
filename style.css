@@ -27,7 +27,7 @@ body {
 
 /* HEADER-FOOTER */
 header, footer {
-  background: var(--color-bg-secondary);
+  background-color: var(--color-bg-secondary);
   padding: 1rem 2rem;
   text-align: center;
   transition: background-color 0.3s ease;
@@ -86,11 +86,6 @@ svg {
   stroke: #F8F8F8;
   transform: rotate(0deg);
   transition: transform 0.3s ease;
-}
-
-.nav-content-contact .icon-instagram {
-  fill: var(--color-brand);
-  margin-top: 1rem;
 }
 
 .icon-map, .icon-moon {
@@ -209,37 +204,38 @@ input[type='checkbox'] {
 }
 nav {
   background-color: var(--color-text);
-  color: #F8F8F8;
+  color: var(--color-bg-secondary);
 }
 .nav-container {
-  max-width: 60rem;
   margin: 0 auto;
+  max-width: 60rem;
 }
 .nav-container label {
   font-family: "brand-regular", var(--font-stack);
   font-size: 1.3rem;
   padding: 0.5rem 1rem;
 }
-/* UNCOLLAPSED (BIG) */
+/* UNCOLLAPSED-BIG */
 @media (min-width: 40rem) {
   .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
+  .nav-menu {
+    clear: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
   .nav-menu li {
     display: inline-block;
     padding: 0 1rem;
   }
-  .nav-menu {
-    clear: none;
-    margin: 0;
-    padding: 0;
-  }
   .icon-chevron {display: none}
 }
-/* ----------------- */
-/* COLLAPSED (SMALL) */
+/* --------------- */
+/* COLLAPSED-SMALL */
 @media (max-width: 40rem) {
   .nav-container label {
     display: flex;
@@ -267,7 +263,7 @@ nav {
     transition: max-height 0.2s ease;
   }
 }
-/* ----------------- */
+/* --------------- */
 /* ------ */
 
 /* DARK */

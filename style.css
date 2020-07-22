@@ -53,7 +53,7 @@ nav {
   text-transform: lowercase;
 }
 .nav-menu {
-  font: 0.82rem "brand-medium", var(--font-stack);
+  font: 0.8rem "brand-medium", var(--font-stack);
   letter-spacing: 0.05rem;
   text-transform: uppercase;
   list-style: none;
@@ -211,7 +211,7 @@ svg {
   grid-gap: 0 1.5rem;
 }
 .article-body p {
-  line-height: 1.5;
+  line-height: 1.7;
   margin: 0.75rem 0 0;
 }
 /* ------- */
@@ -232,7 +232,7 @@ svg {
 .gallery-item {
   background-color: var(--color-bg-secondary);
   border-radius: 15px;
-  box-shadow: 0 3px 6px #C0C0C0;
+  box-shadow: 0 3px 5px #C0C0C0;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 .gallery-item img {
@@ -240,10 +240,9 @@ svg {
   border-radius: 15px 15px 0 0;
 }
 .gallery-item p {
-  font-family: "brand-regular", var(--font-stack);
   letter-spacing: 0.025rem;
   margin: 0;
-  padding: 0.75rem;
+  padding: 0.7rem;
   text-align: center;
 }
 /* ------- */

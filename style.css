@@ -2,12 +2,17 @@
   font-family: "brand-regular";
   src: url("fonts/brand-regular.woff2") format("woff2");
 }
+@font-face {
+  font-family: "brand-medium";
+  src: url("fonts/brand-medium.woff2") format("woff2");
+}
 
 :root {
   --color-brand: #FF6F08;
   --color-text: #222222;
   --color-bg-primary: #E6E6E6;
   --color-bg-secondary: #F6F6F6;
+  --color-bg-nav: #F6F5F3;
   --color-dark-text: #FAFAFA;
   --color-dark-bg-secondary: #373737;
   --font-stack: -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", sans-serif;
@@ -80,7 +85,7 @@ svg {
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 3rem;
-  stroke: var(--color-bg-secondary);
+  stroke: var(--color-text);
   transform: rotate(0deg);
   transition: transform 0.3s ease;
 }
@@ -187,17 +192,24 @@ input[type='checkbox'] {
   display: none;
 }
 nav {
-  background-color: var(--color-text);
-  color: var(--color-bg-secondary);
+  background-color: var(--color-bg-nav);
+  color: var(--color-text);
+  box-shadow: inset 0 -0.1rem #EAE6E2;
 }
 .nav-container {
   margin: 0 auto;
   max-width: 60rem;
 }
-.nav-container label {
-  font-family: "brand-regular", var(--font-stack);
-  font-size: 1.3rem;
+.nav-toggle {
+  font: 1.3rem "brand-regular", var(--font-stack);
   padding: 0.5rem 1rem;
+}
+.nav-menu {
+  font: 0.82rem "brand-medium", var(--font-stack);
+  letter-spacing: 0.05rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 /* UNCOLLAPSED-BIG */
 @media (min-width: 40rem) {
@@ -208,9 +220,6 @@ nav {
   }
   .nav-menu {
     clear: none;
-    list-style: none;
-    margin: 0;
-    padding: 0;
   }
   .nav-menu li {
     display: inline-block;
@@ -221,17 +230,14 @@ nav {
 /* --------------- */
 /* COLLAPSED-SMALL */
 @media (max-width: 40rem) {
-  .nav-container label {
+  .nav-toggle {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   .nav-menu {
     clear: both;
-    list-style: none;
     overflow: hidden;
-    margin: 0;
-    padding: 0;
     max-height: 0;
     transition: max-height 0.2s ease;
   }
@@ -261,6 +267,11 @@ nav {
   transition: background-color 0.3s ease;
 }
 
+.dark main {
+  background-color: var(--color-text);
+  transition: background-color 0.3s ease;
+}
+
 .dark .icon-yarn, .dark .icon-hook, .dark .icon-bunny {
   fill: var(--color-brand);
   stroke: var(--color-brand);
@@ -270,11 +281,6 @@ nav {
 .dark .icon-map, .dark .icon-moon, .dark .icon-check {
   stroke: var(--color-brand);
   transition: stroke 0.5s ease, transform 0.2s ease;
-}
-
-.dark main {
-  background-color: var(--color-text);
-  transition: background-color 0.3s ease;
 }
 
 .dark .gallery-item {

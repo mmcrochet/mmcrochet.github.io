@@ -10,10 +10,8 @@
 :root {
   --color-brand: #FF6F08;
   --color-text: #222222;
-  --color-bg-primary: #E6E6E6;
-  --color-bg-secondary: #F6F6F6;
-  --color-bg-nav: #F6F5F3;
-  --color-dark-text: #FAFAFA;
+  --color-bg-primary: #FAF7F4;
+  --color-bg-secondary: #FDFDFD;
   --color-dark-bg-secondary: #373737;
   --font-stack: -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", sans-serif;
 }
@@ -65,7 +63,8 @@ main {
   background-color: var(--color-bg-primary);
   justify-items: center;
   padding: 2rem;
-  transition: background-color 0.3s ease;
+  box-shadow: inset 0 0.1rem #EAE7E4, inset 0 -0.1rem #EAE7E4;
+  transition: background-color 0.3s ease, box-shadow 0.5s ease;
 }
 .main-wrapper {
   display: grid;
@@ -192,9 +191,9 @@ input[type='checkbox'] {
   display: none;
 }
 nav {
-  background-color: var(--color-bg-nav);
-  color: var(--color-text);
-  box-shadow: inset 0 -0.1rem #EAE6E2;
+  background-color: var(--color-bg-primary);
+  box-shadow: inset 0 -0.1rem #EAE7E4;
+  transition: box-shadow 0.5s ease;
 }
 .nav-container {
   margin: 0 auto;
@@ -258,8 +257,14 @@ nav {
 
 /* DARK */
 .dark {
-  color: var(--color-dark-text);
+  color: var(--color-bg-secondary);
   transition: color 0.5s ease;
+}
+
+.dark nav, .dark main {
+  background-color: var(--color-text);
+  box-shadow: none;
+  transition: background-color 0.3s ease;
 }
 
 .dark header, .dark footer {
@@ -267,9 +272,9 @@ nav {
   transition: background-color 0.3s ease;
 }
 
-.dark main {
-  background-color: var(--color-text);
-  transition: background-color 0.3s ease;
+.dark .icon-chevron {
+  stroke: var(--color-bg-secondary);
+  transition: stroke 0.5s ease, transform 0.2s ease;
 }
 
 .dark .icon-yarn, .dark .icon-hook, .dark .icon-bunny {

@@ -212,14 +212,20 @@ nav {
   .nav-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
   }
   .nav-menu {
-    clear: none;
+    display: flex;
   }
   .nav-menu li {
-    display: inline-block;
+    display: flex;
     padding: 0 1rem;
+  }
+  .nav-menu-item {
+    display: flex;
+    align-items: center;
+  }
+  .nav-menu-item:hover {
+    box-shadow: inset 0 -0.1rem var(--color-text);
   }
   .icon-chevron {display: none}
 }

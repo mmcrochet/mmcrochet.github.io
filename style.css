@@ -6,6 +6,10 @@
   font-family: "brand-medium";
   src: url("fonts/brand-medium.woff2") format("woff2");
 }
+@font-face {
+  font-family: "brand-bold";
+  src: url("fonts/brand-bold.woff2") format("woff2");
+}
 
 :root {
   --color-brand: #FF6F08;
@@ -13,15 +17,13 @@
   --color-bg-primary: #FAF7F4;
   --color-bg-secondary: #FFFEFD;
   --color-dark-bg-secondary: #353535;
-  --font-stack: -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", sans-serif;
+  --font-stack: "brand-regular", -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", sans-serif;
 }
-
 a {
   color: currentColor;
   position: relative;
   text-decoration: none;
 }
-
 body {
   font-family: var(--font-stack);
   color: var(--color-text);
@@ -32,6 +34,83 @@ body {
   -ms-text-size-adjust: none;
 }
 
+/* NAVBAR */
+input[type='checkbox'] {
+  display: none;
+}
+nav {
+  background-color: var(--color-bg-primary);
+  box-shadow: inset 0 -0.1rem #EAE7E4;
+  transition: background-color 0.3s ease, box-shadow 0.5s ease;
+}
+.nav-container {
+  margin: 0 auto;
+  max-width: 60rem;
+}
+.nav-toggle {
+  font: 1.3rem "brand-bold", var(--font-stack);
+  padding: 0.5rem 1rem;
+  text-transform: lowercase;
+}
+.nav-menu {
+  font: 0.82rem "brand-medium", var(--font-stack);
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* UNCOLLAPSED-BIG */
+@media (min-width: 40rem) {
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav-menu {
+    display: flex;
+  }
+  .nav-menu li {
+    display: flex;
+    padding: 0 1rem;
+  }
+  .nav-menu-item {
+    display: flex;
+    align-items: center;
+  }
+  .nav-menu-item:hover {
+    box-shadow: inset 0 -0.1rem var(--color-text);
+  }
+  .icon-chevron {display: none}
+}
+/* --------------- */
+/* COLLAPSED-SMALL */
+@media (max-width: 40rem) {
+  .nav-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-menu {
+    clear: both;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.2s ease;
+  }
+  .nav-menu li {
+    margin: 1rem;
+    text-align: right;
+  }
+  input:checked + .nav-toggle .icon-chevron {
+    transform: rotate(-180deg);
+  }
+  input:checked ~ .nav-menu {
+    max-height: 10rem;
+    transition: max-height 0.2s ease;
+  }
+}
+/* --------------- */
+/* ------ */
+
 /* HEADER-FOOTER */
 header, footer {
   background-color: var(--color-bg-secondary);
@@ -39,17 +118,19 @@ header, footer {
   text-align: center;
   transition: background-color 0.3s ease;
 }
-.header-brand {
-  font: normal 2rem/1.3 "brand-regular", var(--font-stack);
-  margin: 1rem 0;
-}
-.header-subbrand {
-  font: normal 1.6rem/1.3 "brand-regular", var(--font-stack);
-  margin: 1rem 0;
-}
 header p, footer p {
   font: 1rem/1.5 var(--font-stack);
   margin: 0.5rem 0;
+}
+.header-brand, .header-subbrand {
+  margin: 1rem 0;
+  text-transform: lowercase;
+}
+.header-brand {
+  font: normal 2rem/1.3 "brand-bold", var(--font-stack);
+}
+.header-subbrand {
+  font: normal 1.6rem/1.3 "brand-bold", var(--font-stack);
 }
 header .lead {
   font: 1.1rem/1.5 var(--font-stack);
@@ -113,24 +194,6 @@ svg {
 }
 /* ----- */
 
-.anchor-custom a:before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 0.1rem;
-  bottom: 0;
-  left: 0;
-  background-color: var(--color-brand);
-  visibility: hidden;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease, visibility 0.3s ease;
-}
-.anchor-custom a:hover:before {
-  visibility: visible;
-  transform: scaleX(1);
-}
-
 /* ARTICLE */
 .article-container {
   display: grid;
@@ -138,8 +201,9 @@ svg {
   grid-gap: 1.5rem;
 }
 .article-header {
-  font: 1.5rem "brand-regular", var(--font-stack);
+  font: 1.5rem "brand-bold", var(--font-stack);
   border-bottom: 0.1rem solid #808080;
+  text-transform: lowercase;
 }
 .article-body {
   display: grid;
@@ -154,8 +218,9 @@ svg {
 
 /* GALLERY */
 .gallery-title {
-  font: 1.5rem "brand-regular", var(--font-stack);
+  font: 1.5rem "brand-bold", var(--font-stack);
   border-bottom: 0.1rem solid #808080;
+  text-transform: lowercase;
   margin-bottom: 1rem;
 }
 .gallery-container {
@@ -182,81 +247,6 @@ svg {
   text-align: center;
 }
 /* ------- */
-
-/* NAVBAR */
-input[type='checkbox'] {
-  display: none;
-}
-nav {
-  background-color: var(--color-bg-primary);
-  box-shadow: inset 0 -0.1rem #EAE7E4;
-  transition: background-color 0.3s ease, box-shadow 0.5s ease;
-}
-.nav-container {
-  margin: 0 auto;
-  max-width: 60rem;
-}
-.nav-toggle {
-  font: 1.3rem "brand-regular", var(--font-stack);
-  padding: 0.5rem 1rem;
-}
-.nav-menu {
-  font: 0.82rem "brand-medium", var(--font-stack);
-  letter-spacing: 0.05rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-/* UNCOLLAPSED-BIG */
-@media (min-width: 40rem) {
-  .nav-container {
-    display: flex;
-    justify-content: space-between;
-  }
-  .nav-menu {
-    display: flex;
-  }
-  .nav-menu li {
-    display: flex;
-    padding: 0 1rem;
-  }
-  .nav-menu-item {
-    display: flex;
-    align-items: center;
-  }
-  .nav-menu-item:hover {
-    box-shadow: inset 0 -0.1rem var(--color-text);
-  }
-  .icon-chevron {display: none}
-}
-/* --------------- */
-/* COLLAPSED-SMALL */
-@media (max-width: 40rem) {
-  .nav-toggle {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .nav-menu {
-    clear: both;
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.2s ease;
-  }
-  .nav-menu li {
-    margin: 1rem;
-    text-align: right;
-  }
-  input:checked + .nav-toggle .icon-chevron {
-    transform: rotate(-180deg);
-  }
-  input:checked ~ .nav-menu {
-    max-height: 10rem;
-    transition: max-height 0.2s ease;
-  }
-}
-/* --------------- */
-/* ------ */
 
 /* DARK */
 .dark {
@@ -297,3 +287,21 @@ nav {
   transition: background-color 0.3s ease;
 }
 /* ---- */
+
+.anchor-custom a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0.1rem;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-brand);
+  visibility: hidden;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease, visibility 0.3s ease;
+}
+.anchor-custom a:hover:before {
+  visibility: visible;
+  transform: scaleX(1);
+}

@@ -35,7 +35,7 @@ body {
 /* HEADER-FOOTER */
 header, footer {
   background-color: var(--color-bg-secondary);
-  padding: 1rem 2rem;
+  padding: 0.5rem 2rem;
   text-align: center;
   transition: background-color 0.3s ease;
 }
@@ -48,14 +48,11 @@ header, footer {
   margin: 1rem 0;
 }
 header p, footer p {
-  font: 1rem/2 var(--font-stack);
-  margin: 0;
+  font: 1rem/1.5 var(--font-stack);
+  margin: 0.5rem 0;
 }
 header .lead {
-  font: 1.1rem/2 var(--font-stack);
-}
-header p:last-child {
-  margin-bottom: 1rem;
+  font: 1.1rem/1.5 var(--font-stack);
 }
 /* ------------- */
 

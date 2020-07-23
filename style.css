@@ -147,7 +147,7 @@ main {
   grid-template-columns: 1fr;
   grid-gap: 2rem;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 1rem;
   max-width: 60rem;
 }
 
@@ -163,20 +163,16 @@ main {
   text-transform: lowercase;
 }
 
-.article-body {
-  grid-gap: 0 1.5rem;
-}
 .article-body p {
   line-height: 1.7;
   margin: 0.75rem 0;
 }
 
-.gallery-title {
-  grid-column: 1/-1;
-  margin-bottom: 1rem;
-}
 .gallery-container {
   align-items: center;
+}
+.gallery-title {
+  grid-column: 1/-1;
 }
 .gallery-item {
   background-color: var(--color-bg-secondary);
